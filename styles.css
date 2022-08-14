@@ -145,7 +145,6 @@ input{
     overflow-y: scroll;
     height: 180px;
     width: 470px;
-    scroll-snap-type: mandatory;
 
     /* overflow: hidden */
 }

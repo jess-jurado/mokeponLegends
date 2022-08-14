@@ -155,20 +155,46 @@ function combate(){
 // dialogo combate
 function crearMensaje(){
 
-    let mascotaJugador = spanMascotaJugador;
-    let mascotaEnemigo = spanMascotaEnemigo;
-    let seccionMensajes = document.getElementById('mensaje');
+    let seccionMensajes = document.getElementById('resultado');
+    let ataquesDelJugador = document.getElementById('ataques-del-jugador');
+    let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo');
 
-    let parrafo = document.createElement('p');
-    parrafo.innerHTML =` Tu mokepon usó  ${ataqueJugador}   ...el mokepon enemigo usó ${ataqueEnemigo}, ${resultadoCombate} `;
+    let notificacion = document.createElement('p')
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
 
-    seccionMensajes.appendChild(parrafo);
+    seccionMensajes.innerHTML = resultadoCombate;
+    ataquesDelJugador.innerHTML = ataqueJugador;
+    ataquesDelEnemigo.innerHTML = ataqueEnemigo;
+    // let parrafo = document.createElement('p');
+    // parrafo.innerHTML =` Tu mokepon usó  ${ataqueJugador}   ...el mokepon enemigo usó ${ataqueEnemigo}, ${resultadoCombate} `;
+
+    seccionMensajes.appendChild(notificacion);
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador);
+    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo);
     
-    seleccionaMascotaJugador(spanMascotaJugador);
-    seleccionaMascotaEnemigo(spanMascotaEnemigo);
     finalJuego();
 
 }
+
+
+
+
+//VAMOS A PROBA A LA MANERA DE ESTA MUJER
+// function crearMensaje(){
+
+//     let seccionMensajes = document.getElementById('mensaje');
+
+//     let parrafo = document.createElement('p');
+//     parrafo.innerHTML =` Tu mokepon usó  ${ataqueJugador}   ...el mokepon enemigo usó ${ataqueEnemigo}, ${resultadoCombate} `;
+
+//     seccionMensajes.appendChild(parrafo);
+    
+//     seleccionaMascotaJugador(spanMascotaJugador);
+//     seleccionaMascotaEnemigo(spanMascotaEnemigo);
+//     finalJuego();
+
+// }
 
 //mensaje de victoria o derrota
 
