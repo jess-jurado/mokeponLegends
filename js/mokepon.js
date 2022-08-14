@@ -3,6 +3,8 @@ let ataqueEnemigo;
 let resultadoCombate;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
+let spanMascotaEnemigo;
+let spanMascotaJugador;
 
 
 // inicio de juego y botones eventos
@@ -132,13 +134,13 @@ function ataqueAleatorioEnemigo() {
 function combate(){
 
     if (ataqueJugador == ataqueEnemigo ){
-        resultadoCombate = 'NADIE GANÓ 🤝'  ;                                                       
+        resultadoCombate = 'EMPATE 🤝'  ;                                                       
     }  else if (ataqueJugador == 'AGUA 💧' && ataqueEnemigo == 'TIERRA 🌱' || ataqueJugador == 'AGUA 💧' && ataqueEnemigo == 'FUEGO 🔥' ||  ataqueJugador == 'FUEGO 🔥' && ataqueEnemigo == 'TIERRA 🌱' ){
-       resultadoCombate = 'jugador gana !! 😉✌';
+       resultadoCombate = 'GANAS !! 😉✌';
        vidasEnemigo--;
         
     } else if (  ataqueJugador == 'TIERRA 🌱' && ataqueEnemigo == 'FUEGO 🔥'|| ataqueJugador == 'TIERRA 🌱' && ataqueEnemigo == 'AGUA 💧' || ataqueJugador == 'FUEGO 🔥' && ataqueEnemigo == 'AGUA 💧'){
-        resultadoCombate = 'Enemigo gana !😵';
+        resultadoCombate = 'PIERDES !😵';
         vidasJugador--;
         
     } 
@@ -153,13 +155,17 @@ function combate(){
 // dialogo combate
 function crearMensaje(){
 
+    let mascotaJugador = spanMascotaJugador;
+    let mascotaEnemigo = spanMascotaEnemigo;
     let seccionMensajes = document.getElementById('mensaje');
 
     let parrafo = document.createElement('p');
-    parrafo.innerHTML =` Tu mokepon usó  ${ataqueJugador}   ...el mokepon enemigo usó ${ataqueEnemigo} finalmente ${resultadoCombate} `;
+    parrafo.innerHTML =` Tu mokepon usó  ${ataqueJugador}   ...el mokepon enemigo usó ${ataqueEnemigo}, ${resultadoCombate} `;
 
     seccionMensajes.appendChild(parrafo);
     
+    seleccionaMascotaJugador(spanMascotaJugador);
+    seleccionaMascotaEnemigo(spanMascotaEnemigo);
     finalJuego();
 
 }
