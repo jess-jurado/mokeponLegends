@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Rubik+Dirt&display=swap');
+body{
+    font-family: 'Nanum Gothic Coding', monospace;
+    
+    zoom: 2;
+    background: url(https://images.wikidexcdn.net/mwuploads/esssbwiki/d/d0/latest/20180818070350/Estadio_Pok%C3%A9mon_SSBU.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+
+#selecionar-mascota{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#titulo{
+    font-family: 'Rubik Dirt', cursive;
+    color:white;
+    font-size: 32px;
+
+}
+
+
+
+.subtitulo{
+    font-family: 'Rubik Dirt', cursive;
+    color: white;
+    font-size: 20px;
+
+
+}
+
+.tarjetas{
+    display: flex;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon{
+    width: 180px;
+    height: 100px;
+    background: #3B9AE1;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta-de-mokepon img{
+    width: 80px;
+}
+
+.tarjeta-de-mokepon:hover{
+    cursor: pointer;
+}
+
+input{
+    display: none;
+}
+
+
+#boton-mascota{
+    margin: 20px 0px 0px 0px;
+    border-radius: 12px;
+    background: transparent;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border: 2px solid white;
+}
+
+#selecionar-ataque{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn-fire{
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    width: 180px;
+    background-color: firebrick;
+    border-color: transparent;
+    color: white;
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+.btn-water{
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    width: 180px;
+    background-color: #3B9AE1;
+    border-color: transparent;
+    color: white;
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+.btn-earth{
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    width: 180px;
+    background-color: greenyellow;
+    border-color: transparent;
+    color: white;
+    font-family: 'Nanum Gothic Coding', monospace;
+}
