@@ -200,10 +200,10 @@ function crearMensaje(){
 
 function finalJuego(){
     if (vidasEnemigo == 0 ){
-        let seccionMensajes = document.getElementById('mensaje');
+        let seccionMensajes = document.getElementById('mensajes');
 
         let parrafoVictoria = document.createElement('p');
-        parrafoVictoria.innerHTML = `El enemigo no tiene ❤ y se va pal centro mokepon 🚑`;
+        parrafoVictoria.innerHTML = `FELICIDADES GANASTE !! 🎖`;
         seccionMensajes.appendChild(parrafoVictoria);      
         crearBotonReiniciar();
         let botonFuego = document.getElementById('boton-fuego')
@@ -219,10 +219,10 @@ function finalJuego(){
 
     } else if ( vidasJugador == 0 ){
 
-        let seccionMensajes = document.getElementById('mensaje');
+        let seccionMensajes = document.getElementById('mensajes');
 
         let parrafoDerrota = document.createElement('p');
-        parrafoDerrota.innerHTML = `El jugador no tiene ❤ se va corriendo pal clinico de los mokepon 🚑`
+        parrafoDerrota.innerHTML = `OHHH PERDISTE 🤬`
         seccionMensajes.appendChild(parrafoDerrota);
         crearBotonReiniciar();
         let botonFuego = document.getElementById('boton-fuego')

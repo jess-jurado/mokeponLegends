@@ -120,28 +120,32 @@ input{
 }
 
 #dialogo-mascotas-propia{
-    color: white;
+    color: black;
     display: flex;
-    background-color: pink;
+    background-color: #F0EBCC;
+    opacity: 80%;
     margin-right: 20px;
     padding-bottom: 50px;
     margin-top: 20px;
     padding: 10px;
+    border-radius: 10px;
 
 }
 
 #dialogo-mascotas-contraria{
-    color: white;
+    color: black;
     display: flex;
-    background-color: pink;
+    background-color: #F0EBCC;
+    opacity: 80%;
     margin-left: 20px;
     padding-bottom: 50px;
     margin-top: 20px;
     padding: 10px;
+    border-radius: 10px;
 }
 
 #mensaje{
-    color: white;
+    color: black;
     overflow-y: scroll;
     height: 180px;
     width: 470px;
@@ -157,11 +161,18 @@ input{
     flex-wrap: nowrap;
     flex-direction: row;
     margin-top: 20px;
+    justify-content: center;
+    
 }
 
 #reiniciar{
     display: flex;
     box-sizing: border-box;
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 20px;
+    
     
 }
 #button{
@@ -172,4 +183,48 @@ input{
     color: white;
     font-family: 'Nanum Gothic Coding', monospace;
 
+}
+
+#caja-comun{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mensajes{
+    display:flex;
+    color: black;
+    align-items: baseline;
+    flex-direction: row-reverse;
+    background-color: #F0EBCC;
+    opacity: 80%;
+    width: 320px;
+    height: 60px;
+    margin-top: 20px;
+    justify-content: center;
+    border-radius: 10px;
+
+}
+
+#ataques-del-enemigo{
+    color: black;
+}
+
+#ataques-del-jugador{
+    color: black;
+}
+
+#resultado{
+    color: black;
+}
+#resto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F0EBCC;
+    opacity: 80%;
+    width: 320px;
+    height: 120px;
+    margin-top: 10px;
+    border-radius: 10px;
 }
