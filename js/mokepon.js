@@ -13,6 +13,9 @@ function iniciarJuego(){
     let seccionSeleccionarAtaques = document.getElementById('selecionar-ataque');
     seccionSeleccionarAtaques.style.display = 'none';
 
+    let botonReiniciar = document.getElementById('boton-reiniciar');
+    botonReiniciar.style.display = 'none';
+
     let botonMascotaJugador = document.getElementById('boton-mascota')
 botonMascotaJugador.addEventListener('click', seleccionaMascotaJugador)
 
@@ -232,25 +235,16 @@ function finalJuego(){
         let botonTierra = document.getElementById('boton-tierra')
         botonTierra.disabled = true;
 
-        
-
     }
     
 }
+
 function crearBotonReiniciar() {
-    let seccionBotonReiniciar = document.getElementById('reiniciar');
-    let botonReiniciar = document.createElement('button');
-
-    botonReiniciar.innerHTML = "Reiniciar";
-
-
-    seccionBotonReiniciar.appendChild(botonReiniciar);
+    let botonReiniciar = document.getElementById('boton-reiniciar');
     botonReiniciar.addEventListener('click', reiniciarJuego);
-
+    botonReiniciar.style.display = 'flex';
+    
 }
-
-
-
 
 function reiniciarJuego() {
     location.reload();
