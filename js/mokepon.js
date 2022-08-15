@@ -166,9 +166,7 @@ function crearMensaje(){
     seccionMensajes.innerHTML = resultadoCombate;
     ataquesDelJugador.innerHTML = ataqueJugador;
     ataquesDelEnemigo.innerHTML = ataqueEnemigo;
-    // let parrafo = document.createElement('p');
-    // parrafo.innerHTML =` Tu mokepon usó  ${ataqueJugador}   ...el mokepon enemigo usó ${ataqueEnemigo}, ${resultadoCombate} `;
-
+  
     seccionMensajes.appendChild(notificacion);
     ataquesDelJugador.appendChild(nuevoAtaqueDelJugador);
     ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo);
