@@ -228,3 +228,10 @@ input{
     margin-top: 10px;
     border-radius: 10px;
 }
+
+#boton-reiniciar{
+    display: flex;
+    background: orange;
+    border-radius: 10px;
+    border: transparent
+}
