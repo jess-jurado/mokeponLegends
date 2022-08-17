@@ -68,6 +68,11 @@ input{
     display: none;
 }
 
+input:checked + label{
+    background-color: #B1E1FF;
+
+}
+
 
 #boton-mascota{
     margin: 20px 0px 0px 0px;
