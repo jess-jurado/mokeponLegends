@@ -38,7 +38,7 @@ body{
 
 }
 
-.tarjetas{
+.tarjetas, #caja-botones{
     display: flex;
     gap: 10px;
 }
@@ -117,31 +117,6 @@ input{
     border-color: transparent;
     color: white;
     font-family: 'Nanum Gothic Coding', monospace;
-}
-
-#dialogo-mascotas-propia{
-    color: black;
-    display: flex;
-    background-color: #F0EBCC;
-    opacity: 80%;
-    margin-right: 20px;
-    padding-bottom: 50px;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 10px;
-
-}
-
-#dialogo-mascotas-contraria{
-    color: black;
-    display: flex;
-    background-color: #F0EBCC;
-    opacity: 80%;
-    margin-left: 20px;
-    padding-bottom: 50px;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 10px;
 }
 
 #mensaje{
@@ -223,8 +198,8 @@ input{
     align-items: center;
     background-color: #F0EBCC;
     opacity: 80%;
-    width: 320px;
-    height: 120px;
+    /* width: 320px;
+    height: 265px; */
     margin-top: 10px;
     border-radius: 10px;
 }
@@ -234,4 +209,29 @@ input{
     background: orange;
     border-radius: 10px;
     border: transparent
+}
+
+.ataques{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 100px 100px;
+    background-color: #F0EBCC;
+    opacity: 80%;
+    justify-items: center;
+}
+
+.ataqueJugador, .ataqueEnemigo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 360px) {
+    .tarjetas {
+        flex-direction: column;
+    }
+    #caja-botones  {
+        flex-direction: column;
+        flex-direction: column;
+    }
 }
