@@ -54,16 +54,13 @@
 
         <h2 class="subtitulo">Elige tu ataque : </h2>
 
-        <div>
+        <div id="caja-botones">
             <button id="boton-fuego" class="btn-fire">Fuego 🔥</button>
             <button id="boton-agua" class="btn-water"> Agua 💧</button>
             <button id="boton-tierra" class="btn-earth">Tierra 🌱</button>
         </div>
 
         <div id="caja-comun">
-            <!-- <section id="mensaje"> -->
-
-            <!-- </section> -->
 
             <div id="mensajes">
 
@@ -76,33 +73,24 @@
 
             <div id="resto">
                 <div id="resultado"></div>
-                <div id="ataques-del-jugador"></div>
-                <div id="ataques-del-enemigo"></div>
             </div>
+                <div class="ataques">
+                    <div class="ataqueJugador">
+                        <p id="vidasJugador"></p>
+                        <b><p id="mascotaJugador"></p></b>
+                        <div id="ataques-del-jugador"></div>
+                    </div>
+                    <div class="ataqueEnemigo">
+                        <p id="vidasEnemigo"></p>
+                        <b><p id="mascotaEnemigo"></p></b>
+                        <div id="ataques-del-enemigo"></div>
+                    </div>
+                </div>
+                     
+                
+            
             
         </div>
-
-        <div id="contenedor-de-vidas"> 
-            <div id="dialogo-mascotas-propia">
-
-            <p>Tu <b><span id="mascotaJugador"></span></b>  tiene </br><span id="vidasJugador"></span> vidas ❤</p>
-            
-            </div>
-
-            <div id="dialogo-mascotas-contraria">
-
-            <p> <b><span id="mascotaEnemigo"></span></b> Enemigo tiene </br><span id="vidasEnemigo"></span> vidas ❤</p>
-
-            </div>
-
-
-
-        </div>
-
-       
-
-        
-
     
     </section>
 
