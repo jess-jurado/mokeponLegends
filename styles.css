@@ -196,6 +196,8 @@ input:checked + label{
 
 #resultado{
     color: black;
+    display: flex;
+    align-items: center;
 }
 #resto{
     display: flex;

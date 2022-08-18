@@ -205,7 +205,7 @@ function finalJuego(){
 
         let parrafoVictoria = document.createElement('p');
         parrafoVictoria.innerHTML = `FELICIDADES GANASTE !! 🎖`;
-        seccionMensajes.appendChild(parrafoVictoria);      
+        seccionMensajes.appendChild(parrafoVictoria);     
         crearBotonReiniciar();
         let botonFuego = document.getElementById('boton-fuego')
         botonFuego.disabled = true;
@@ -223,7 +223,7 @@ function finalJuego(){
         let seccionMensajes = document.getElementById('mensajes');
 
         let parrafoDerrota = document.createElement('p');
-        parrafoDerrota.innerHTML = `OHHH PERDISTE 🤬`
+        parrafoDerrota.innerHTML = `OHHH PERDISTE 🤬`;
         seccionMensajes.appendChild(parrafoDerrota);
         crearBotonReiniciar();
         let botonFuego = document.getElementById('boton-fuego')
@@ -234,6 +234,7 @@ function finalJuego(){
 
         let botonTierra = document.getElementById('boton-tierra')
         botonTierra.disabled = true;
+        
 
     }
     
