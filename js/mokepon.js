@@ -21,11 +21,29 @@ const seccionMensajes = document.getElementById('resultado');
 const ataquesDelJugador = document.getElementById('ataques-del-jugador');
 const ataquesDelEnemigo = document.getElementById('ataques-del-enemigo');
 
+const seccionMensajeFinal = document.getElementById('mensajes');
+
+let mokepones = [];
 let ataqueJugador;
 let ataqueEnemigo;
 let resultadoCombate;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
+
+class Mokepon {
+    constructor(nombre, foto, vida) {
+        this.nombre = nombre;
+        this.foto = foto;
+        this.vida = vida;
+    }
+}
+
+let hipodoge = new Mokepon('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5);
+let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 5);
+let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueyae_attack.png', 5);
+
+mokepones.push( hipodoge, capipepo, ratigueya);
+console.log(mokepones);
 
 // inicio de juego y botones eventos
 function iniciarJuego(){
@@ -167,7 +185,7 @@ function finalJuego(){
     if (vidasEnemigo == 0 ){
         let parrafoVictoria = document.createElement('p');
         parrafoVictoria.innerHTML = `FELICIDADES GANASTE !! 🎖`;
-        seccionMensajes.appendChild(parrafoVictoria);     
+        seccionMensajeFinal.appendChild(parrafoVictoria);     
         crearBotonReiniciar();
         
         botonFuego.disabled = true;
@@ -177,7 +195,7 @@ function finalJuego(){
     } else if ( vidasJugador == 0 ){
         let parrafoDerrota = document.createElement('p');
         parrafoDerrota.innerHTML = `OHHH PERDISTE 🤬`;
-        seccionMensajes.appendChild(parrafoDerrota);
+        seccionMensajeFinal.appendChild(parrafoDerrota);
         crearBotonReiniciar();
         
         botonFuego.disabled = true;
