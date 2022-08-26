@@ -95,33 +95,12 @@ input:checked + label{
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
-    width: 180px;
+    width: 90px;
     background-color: firebrick;
     border-color: transparent;
     color: white;
     font-family: 'Nanum Gothic Coding', monospace;
-}
-
-.btn-water{
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    width: 180px;
-    background-color: #3B9AE1;
-    border-color: transparent;
-    color: white;
-    font-family: 'Nanum Gothic Coding', monospace;
-}
-
-.btn-earth{
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    width: 180px;
-    background-color: greenyellow;
-    border-color: transparent;
-    color: white;
-    font-family: 'Nanum Gothic Coding', monospace;
+    margin: 5px;
 }
 
 #mensaje{
@@ -233,12 +212,17 @@ input:checked + label{
     align-items: center;
 }
 
+#contenedorAtaques {
+    display: flex;
+}
+
 @media (max-width: 414px) {
     .tarjetas {
         flex-direction: column;
     }
-    #caja-botones  {
+    #contenedorAtaques  {
         flex-direction: column;
         flex-direction: column;
     }
 }
+
