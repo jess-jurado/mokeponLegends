@@ -258,7 +258,6 @@ function combate(){
     for (let index = 0; index < ataqueJugador.length; index++) {
         if(ataqueJugador[index] === ataqueEnemigo[index]) {
             indexAmbosOponentes(index, index);
-            victoriasJugador ++;
             spanVictoriasJugador.innerHTML = victoriasJugador;
         } else if(ataqueJugador[index] === 'FUEGO' && ataqueEnemigo[index] === 'TIERRA'){
             indexAmbosOponentes(index, index);
@@ -304,9 +303,17 @@ function crearMensaje(){
     seccionMensajes.innerHTML = resultadoCombate;
     ataquesDelJugador.innerHTML = indexAtaqueJugador;
     ataquesDelEnemigo.innerHTML = indexAtaqueEnemigo;
-  
-    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador);
-    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo);
+
+    ataqueJugador.forEach((ataque)=>{
+        texto = document.createElement('p');
+        texto.innerHTML = ataque
+        ataquesDelJugador.appendChild(texto);
+    })
+    ataqueEnemigo.forEach((ataque)=>{
+        texto = document.createElement('p');
+        texto.innerHTML = ataque
+        ataquesDelEnemigo.appendChild(texto);
+    })
 
 }
 
