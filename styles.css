@@ -39,13 +39,14 @@ body{
 }
 
 .tarjetas, #caja-botones{
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    /* grid-auto-rows: 6rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 5rem), 1fr));
+} */
 }
-
 .tarjeta-de-mokepon{
     width: 180px;
     height: 100px;
