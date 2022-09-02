@@ -41,6 +41,9 @@ body{
 .tarjetas, #caja-botones{
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
 }
 
 .tarjeta-de-mokepon{
@@ -95,7 +98,7 @@ input:checked + label{
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
-    width: 90px;
+    width: 70px;
     background-color: firebrick;
     border-color: transparent;
     color: white;
