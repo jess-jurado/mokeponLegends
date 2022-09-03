@@ -358,25 +358,25 @@ function combate(){
 
 
 // dialogo combate
-// function crearMensaje(){
-//     let nuevoAtaqueDelJugador = document.createElement('p')
-//     let nuevoAtaqueDelEnemigo = document.createElement('p')
-//     seccionMensajes.innerHTML = resultadoCombate;
-//     ataquesDelJugador.innerHTML = indexAtaqueJugador;
-//     ataquesDelEnemigo.innerHTML = indexAtaqueEnemigo;
+function crearMensaje(){
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
+    // seccionMensajes.innerHTML = resultadoCombate;
+    ataquesDelJugador.innerHTML = indexAtaqueJugador;
+    ataquesDelEnemigo.innerHTML = indexAtaqueEnemigo;
 
-//     ataqueJugador.forEach((ataque)=>{
-//         texto = document.createElement('p');
-//         texto.innerHTML = ataque
-//         ataquesDelJugador.appendChild(texto);
-//     })
-//     ataqueEnemigo.forEach((ataque)=>{
-//         texto = document.createElement('p');
-//         texto.innerHTML = ataque
-//         ataquesDelEnemigo.appendChild(texto);
-//     })
+    ataqueJugador.forEach((ataque)=>{
+        texto = document.createElement('p');
+        texto.innerHTML = ataque
+        ataquesDelJugador.appendChild(texto);
+    })
+    ataqueEnemigo.forEach((ataque)=>{
+        texto = document.createElement('p');
+        texto.innerHTML = ataque
+        ataquesDelEnemigo.appendChild(texto);
+    })
 
-// }
+}
 
 function crearBotonReiniciar() {
     botonReiniciar.addEventListener('click', reiniciarJuego);
