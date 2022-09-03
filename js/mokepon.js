@@ -17,6 +17,8 @@ const ataquesDelEnemigo = document.getElementById('ataques-del-enemigo');
 const seccionMensajeFinal = document.getElementById('mensajes');
 const contenedorTarjetas = document.getElementById('contenedorTarjetas');
 const contenedorAtaques = document.getElementById('contenedorAtaques');
+const seleccionAtaques = document.getElementById('seleccionAtaques');
+
 
 let mokepones = [];
 let opcionDeMokepones;
@@ -59,57 +61,57 @@ let langostelvis = new Mokepon('Langostelvis', './assets/mokepons_mokepon_langos
 let pydos = new Mokepon('Pydos', './assets/mokepons_mokepon_pydos_attack.png', 5);
 let tucapalma = new Mokepon('Tucapalma', './assets/mokepons_mokepon_tucapalma_attack.png', 5);
 
-hipodoge.ataque.push(
-    { nombre: '💧', id: 'boton-agua'},
-    { nombre: '💧', id: 'boton-agua'},
-    { nombre: '💧', id: 'boton-agua'},
-    { nombre: '🔥', id: 'boton-fuego'},
-    { nombre: '🌱', id: 'boton-tierra'},
-);
+// hipodoge.ataque.push(
+//     { nombre: '💧', id: 'boton-agua'},
+//     { nombre: '💧', id: 'boton-agua'},
+//     { nombre: '💧', id: 'boton-agua'},
+//     { nombre: '🔥', id: 'boton-fuego'},
+//     { nombre: '🌱', id: 'boton-tierra'},
+// );
 
-capipepo.ataque.push(
-    { nombre: '🌱', id: 'boton-tierra'},
-    { nombre: '🌱', id: 'boton-tierra'},
-    { nombre: '🌱', id: 'boton-tierra'},
-    { nombre: '💧', id: 'boton-agua'},
-    { nombre: '🔥', id: 'boton-fuego'},
+// capipepo.ataque.push(
+//     { nombre: '🌱', id: 'boton-tierra'},
+//     { nombre: '🌱', id: 'boton-tierra'},
+//     { nombre: '🌱', id: 'boton-tierra'},
+//     { nombre: '💧', id: 'boton-agua'},
+//     { nombre: '🔥', id: 'boton-fuego'},
     
-);
+// );
 
-ratigueya.ataque.push(
-    { nombre: '🔥', id: 'boton-fuego'},
-    { nombre: '🔥', id: 'boton-fuego'},
-    { nombre: '🔥', id: 'boton-fuego'},
-    { nombre: '💧', id: 'boton-agua'},
-    { nombre: '🌱', id: 'boton-tierra'},
-);
+// ratigueya.ataque.push(
+//     { nombre: '🔥', id: 'boton-fuego'},
+//     { nombre: '🔥', id: 'boton-fuego'},
+//     { nombre: '🔥', id: 'boton-fuego'},
+//     { nombre: '💧', id: 'boton-agua'},
+//     { nombre: '🌱', id: 'boton-tierra'},
+// );
 
-langostelvis.ataque.push(
-    { nombre: '🔥', id: 'boton-fuego'},
-    { nombre: '🔥', id: 'boton-fuego'},
-    { nombre: '🔥', id: 'boton-fuego'},
-    { nombre: '💧', id: 'boton-agua'},
-    { nombre: '🌱', id: 'boton-tierra'},
-);
+// langostelvis.ataque.push(
+//     { nombre: '🔥', id: 'boton-fuego'},
+//     { nombre: '🔥', id: 'boton-fuego'},
+//     { nombre: '🔥', id: 'boton-fuego'},
+//     { nombre: '💧', id: 'boton-agua'},
+//     { nombre: '🌱', id: 'boton-tierra'},
+// );
 
-pydos.ataque.push(
-    { nombre: '🔥', id: 'boton-fuego'},
-    { nombre: '💧', id: 'boton-agua'},
-    { nombre: '💧', id: 'boton-agua'},
-    { nombre: '💧', id: 'boton-agua'},
-    { nombre: '🌱', id: 'boton-tierra'},
-);
+// pydos.ataque.push(
+//     { nombre: '🔥', id: 'boton-fuego'},
+//     { nombre: '💧', id: 'boton-agua'},
+//     { nombre: '💧', id: 'boton-agua'},
+//     { nombre: '💧', id: 'boton-agua'},
+//     { nombre: '🌱', id: 'boton-tierra'},
+// );
 
-tucapalma.ataque.push(
-    { nombre: '🔥', id: 'boton-fuego'},
-    { nombre: '🌱', id: 'boton-tierra'},
-    { nombre: '🌱', id: 'boton-tierra'},
-    { nombre: '🌱', id: 'boton-tierra'},
-    { nombre: '💧', id: 'boton-agua'},
-);
+// tucapalma.ataque.push(
+//     { nombre: '🔥', id: 'boton-fuego'},
+//     { nombre: '🌱', id: 'boton-tierra'},
+//     { nombre: '🌱', id: 'boton-tierra'},
+//     { nombre: '🌱', id: 'boton-tierra'},
+//     { nombre: '💧', id: 'boton-agua'},
+// );
 
 mokepones.push(hipodoge, capipepo, ratigueya, langostelvis, pydos, tucapalma);
-
+console.log(mokepones);
 // inicio de juego y botones eventos
 function iniciarJuego(){
     seccionSeleccionarAtaques.style.display = 'none';
@@ -187,9 +189,12 @@ function extraerAtaques(mascotaJugador) {
 }
 
 function mostrarAtaques(ataques) {
-    ataques.forEach((ataque) => {
-        ataquesMokepon = `
-        <button id="${ataque.id}" class="btn-fire BAtaque">${ataque.nombre}</button>`
+    seleccionAtaques.innerHTML += '<button id="boton-fuego" class="btn-fire BAtaque">🔥</button>';
+    seleccionAtaques.innerHTML += '<button id="boton-agua" class="btn-fire BAtaque">💧</button>';
+    seleccionAtaques.innerHTML += '<button id="boton-tierra" class="btn-fire BAtaque">🌱</button><br />';
+    
+    ataques.forEach((ataque, index) => {
+        ataquesMokepon = `<button id='ataque${index}' class="btn-fire">${''}</button>`
 
         contenedorAtaques.innerHTML += ataquesMokepon;
 
@@ -201,26 +206,34 @@ function mostrarAtaques(ataques) {
     botones = document.querySelectorAll('.BAtaque');
 }
 
+function crearBoton(icono){
+    contenedorAtaques.innerHTML += `<button class="btn-fire">${icono}</button>`;
+}
+
 function secuenciaAtaque() {
     botones.forEach((boton) => {
         boton.addEventListener('click', (e) =>{
             console.log(e)
             if(e.target.textContent === '🔥' ) {
                 ataqueJugador.push('FUEGO');
+                crearBoton('🔥')
                 console.log(ataqueJugador)
-                boton.style.background = '#112f58';
-                boton.disabled = true;
+                // boton.style.background = '#112f58';
+                // boton.disabled = true;
             } else if (e.target.textContent === '💧' ) {
                 ataqueJugador.push('AGUA');
+                crearBoton('💧')
+
                 console.log(ataqueJugador)
-                boton.style.background = '#112f58';
-                boton.disabled = true;
+                // boton.style.background = '#112f58';
+                // boton.disabled = true;
 
             } else {
                 ataqueJugador.push('TIERRA');
+                crearBoton('🌱')
                 console.log(ataqueJugador)
-                boton.style.background = '#112f58';
-                boton.disabled = true;
+                // boton.style.background = '#112f58';
+                // boton.disabled = true;
 
             }
             ataqueAleatorioEnemigo();
@@ -241,12 +254,12 @@ function seleccionaMascotaEnemigo() {
 
 // ataque aleatorio enemigo
 function ataqueAleatorioEnemigo() {
-    let ataqueAleatorio = aleatorio(0, ataquesMokeponEnemigo.length -1);
+    let ataqueAleatorio = aleatorio(0, 2);
 
-    if (  ataqueAleatorio == 0 || ataqueAleatorio == 1){
+    if (  ataqueAleatorio == 0 ){
         ataqueEnemigo.push('FUEGO');
         
-    } else if ( ataqueAleatorio == 3 || ataqueAleatorio == 4) {
+    } else if ( ataqueAleatorio == 1) {
         ataqueEnemigo.push('AGUA');
     
     } else {
