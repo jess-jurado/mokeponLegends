@@ -19,6 +19,8 @@ const contenedorTarjetas = document.getElementById('contenedorTarjetas');
 const contenedorAtaques = document.getElementById('contenedorAtaques');
 const seleccionAtaques = document.getElementById('seleccionAtaques');
 
+const sectionVerMapa = document.getElementById('ver-mapa');
+const mapa = document.getElementById('mapa');
 
 let mokepones = [];
 let opcionDeMokepones;
@@ -42,6 +44,10 @@ let indexAtaqueJugador;
 let indexAtaqueEnemigo;
 let victoriasJugador = 0;
 let victoriasEnemigo = 0;
+
+
+let lienzo = mapa.getContext("2d");
+let intervalo;
 // let victoriasJugador = 3;
 // let vidasEnemigo = 3;
 
@@ -51,6 +57,14 @@ class Mokepon {
         this.foto = foto;
         this.vida = vida;
         this.ataque = [];
+        this.x = 20;
+        this.y = 30;
+        this.ancho = 80;
+        this.alto = 80;
+        this.mapaFoto = new Image();
+        this.mapaFoto.src = foto;
+        this.velocidadX = 0;
+        this.velocidadY = 0;
     }
 }
 
@@ -115,6 +129,8 @@ console.log(mokepones);
 // inicio de juego y botones eventos
 function iniciarJuego(){
     seccionSeleccionarAtaques.style.display = 'none';
+    sectionVerMapa.style.display = 'none';
+
 
     mokepones.forEach((mokepon) => {
         opcionDeMokepones = `
@@ -145,7 +161,13 @@ function iniciarJuego(){
 function seleccionaMascotaJugador() {
     seccionSeleccionarMascotas.style.display = 'none';
 
-    seccionSeleccionarAtaques.style.display = 'flex';
+    // seccionSeleccionarAtaques.style.display = 'flex';
+    sectionVerMapa.style.display = 'flex';
+    intervalo = setInterval(pintarPersonaje, 50);
+
+    window.addEventListener('keydown', sePresionoUnaTecla);
+    
+    window.addEventListener('keyup', detenerMovimiento);
 
     spanVictoriasJugador.innerHTML = victoriasJugador
     
@@ -389,6 +411,79 @@ function reiniciarJuego() {
 
 function aleatorio(min, max ) {
         return Math.floor(Math.random() * (max - min + 1) + min );
+    }
+
+
+    function pintarPersonaje(){
+        capipepo.x = capipepo.x + capipepo.velocidadX
+        capipepo.y = capipepo.y + capipepo.velocidadY
+        lienzo.clearRect(0, 0, mapa.width, mapa.height)
+        lienzo.drawImage(
+            capipepo.mapaFoto,
+            capipepo.x,
+            capipepo.y,
+            capipepo.ancho,
+            capipepo.alto,
+        )
+    }
+
+    function moverDerecha(){
+        capipepo.velocidadX = 5
+
+    }
+    function moverArriba() {
+        capipepo.velocidadY = -5
+    }
+
+    function moverIzquierda() {
+        capipepo.velocidadX = -5
+    }
+
+    function moverAbajo() {
+        capipepo.velocidadY = 5
+    }
+    function detenerMovimiento() {
+        capipepo.velocidadX = 0;
+        capipepo.velocidadY = 0;
+    }
+
+    function sePresionoUnaTecla(event) {
+        switch (event.key) {
+            case 'ArrowUp':
+                moverArriba();
+                break;
+
+                case 'ArrowDown':
+                moverAbajo();
+                break;
+
+                case 'ArrowLeft':
+                moverIzquierda();
+                break;
+
+                case 'ArrowRight':
+                moverDerecha();
+                break;
+
+                case 'w':
+                moverArriba();
+                break;
+
+                case 's':
+                moverAbajo();
+                break;
+
+                case 'a':
+                moverIzquierda();
+                break;
+
+                case 'd':
+                moverDerecha();
+                break;
+        
+            default:
+                break;
+        }
     }
 
 window.addEventListener('load', iniciarJuego);

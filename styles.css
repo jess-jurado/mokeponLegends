@@ -4,7 +4,9 @@ body{
     font-family: 'Nanum Gothic Coding', monospace;
     
     zoom: 2;
-    background: url(https://images.wikidexcdn.net/mwuploads/esssbwiki/d/d0/latest/20180818070350/Estadio_Pok%C3%A9mon_SSBU.jpg) no-repeat center center fixed;
+    background: #2666CF;
+
+    /* background: url(https://images.wikidexcdn.net/mwuploads/esssbwiki/d/d0/latest/20180818070350/Estadio_Pok%C3%A9mon_SSBU.jpg) no-repeat center center fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -218,6 +220,27 @@ input:checked + label{
 
 #contenedorAtaques {
     display: flex;
+}
+
+#ver-mapa {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#mapa {
+    border: 2px solid white;
+}
+.movimientos {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    
+
+}
+.botonesDireccion {
+    background-color: #F0EEC8;
+    border-radius: 5px;
 }
 
 @media (max-width: 760px) {
