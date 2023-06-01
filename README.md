@@ -34,6 +34,3 @@ Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
 
 Este proyecto fue creado por Jesús G. Jurado para un curso de [Platzi](https://www.platzi.com).
 
-## Licencia
-
-Este proyecto se distribuye bajo la licencia [Nombre de la Licencia]. Consulta el archivo `LICENSE` para más información.
